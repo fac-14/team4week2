@@ -24,8 +24,6 @@ var todoFunctions = {
   },
 
   addTodo: function(todos, newTodo) {
-    console.log(typeof newTodo);
-    console.log(Array.isArray(todos));
     var arr = [];
     arr.push(newTodo);
     todos = todos.concat(arr);

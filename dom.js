@@ -1,30 +1,22 @@
 // part 2 linking it all together
 // The function here is called an iife,
 // it keeps everything inside hidden from the rest of our application
+
 (function() {
   // This is the dom node where we will keep our todo
-  var container = document.getElementById('todo-container');
-  var addTodoForm = document.getElementById('add-todo');
+  var container = document.getElementById("todo-container");
+  var addTodoForm = document.getElementById("add-todo");
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: "first todo", done: false },
+    { id: -2, description: "second todo", done: true },
+    { id: -1, description: "third todo", done: false }
   ]; // this is our initial todoList
 
-  var addButtonNode = document.createElement('button');
-  addButtonNode.addEventListener('click', function(){
-    console.log('helloworld');
-    //DOES NOT WORK ATM
-    container.activeElement = addTodoForm.firstChild;
-    //window.Location = 'www.google.com';
-    //window.Location = addTodoForm;
-  })
-  container.appendChild(addButtonNode);
   // This function takes a todo, it returns the DOM node representing that todo
+
   var createTodoNode = function(todo) {
-    var todoNode = document.createElement('li');
-    // you will need to use addEventListener
+    var todoNode = document.createElement("li");
 
     // addButtonNode.addEventListner('click', function(event){
     //   window.location = addTodoForm;
@@ -33,39 +25,57 @@
     todoNode.appendChild(document.createTextNode(todo.description));
 
     // this adds the delete button
-    var deleteButtonNode = document.createElement('button');
-    deleteButtonNode.addEventListener('click', function(event) {
+    var deleteButtonNode = document.createElement("button");
+    deleteButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
-    var markUnmarkButtonNode = document.createElement('button');
-    markUnmarkButtonNode.addEventListener('click', function(event){
+    var markUnmarkButtonNode = document.createElement("button");
+    markUnmarkButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
     });
     todoNode.appendChild(markUnmarkButtonNode);
 
     // add classes for css
-    deleteButtonNode.className = 'delButton';
+    deleteButtonNode.className = "delButton";
 
     return todoNode;
   };
 
   // bind create todo form
   if (addTodoForm) {
-    addTodoForm.addEventListener('submit', function(event) {
+    addTodoForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      console.log(event);
+
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
+      var description = event.target.description.value;
 
-      var description = '?'; // event.target ....
+      console.log(description);
+
+      // use unique id
+      // use addTodo
+      // state = todos
+      // description = newTodo
+
+      var newObject = {
+        id: todoFunctions.generateId(),
+        description: description,
+        done: false
+      };
+
+      console.log(state);
+
+      var newState = todoFunctions.addTodo(state, newObject);
+      update(newState);
 
       // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
-      update(newState);
     });
   }
 
@@ -77,21 +87,14 @@
 
   // you do not need to change this function
   var renderState = function(state) {
-    var todoListNode = document.createElement('ul');
+    var todoListNode = document.createElement("ul");
 
     state.forEach(function(todo) {
       todoListNode.appendChild(createTodoNode(todo));
     });
 
     // you may want to add a class for css
-//container.replaceChild(todoListNode, container.firstChild);
-
-  //this will position add button as the first element  and then
-  // put the todoList as the second element
-    container.replaceChild(addButtonNode, container.firstChild);
-    container.replaceChild(todoListNode, container.childNodes[1]);
-    //container.atodoListNode.ppendAfter(element);
-    addButtonNode.className = 'addButton';
+    container.replaceChild(todoListNode, container.firstChild);
   };
 
   if (container) renderState(state);
