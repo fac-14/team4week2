@@ -49,6 +49,7 @@ var todoFunctions = {
       if (val.id == idToMark) {
         if (val.done == true) {
           val.done = false;
+
         } else {
           val.done = true;
         }

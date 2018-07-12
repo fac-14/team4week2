@@ -9,9 +9,21 @@
   border-radius: 50%;
 }
 
-.addButton{
-  border: 2px solid red;
+.markButton{
+  border : 3px solid green;
   height : 50px;
   width : 50px;
   border-radius : 50%;
+  background: green;
+}
+.unMarkButton{
+  border : 3px solid green;
+  height : 50px;
+  width : 50px;
+  border-radius : 50%;
+  background: white;
+}
+
+.line-through {
+  text-decoration: line-through;
 }

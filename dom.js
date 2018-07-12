@@ -34,14 +34,27 @@
 
     // add markTodo button
     var markUnmarkButtonNode = document.createElement("button");
+
+
+
     markUnmarkButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
+
       update(newState);
     });
+    if(todo.done == true){
+      markUnmarkButtonNode.className = "markButton";
+    }
+    else {
+      markUnmarkButtonNode.className = "unMarkButton";
+    }
+
     todoNode.appendChild(markUnmarkButtonNode);
 
     // add classes for css
     deleteButtonNode.className = "delButton";
+
+//markUnmarkButtonNode.className = "unMarkButton";
 
     return todoNode;
   };
