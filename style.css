@@ -27,3 +27,8 @@
 .line-through {
   text-decoration: line-through;
 }
+.sortButton{
+  border : 3px solid green;
+  height : 50px;
+  width : 50px;
+}

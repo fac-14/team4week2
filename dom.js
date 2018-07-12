@@ -42,8 +42,10 @@
 
       update(newState);
     });
+
     if(todo.done == true){
       markUnmarkButtonNode.className = "markButton";
+      todoNode.className = "line-through";
     }
     else {
       markUnmarkButtonNode.className = "unMarkButton";
@@ -58,6 +60,14 @@
 
     return todoNode;
   };
+  var sortButton = document.createElement("button");
+  sortButton.innerHTML = "sort by done";
+  sortButton.addEventListener("click", function(event) {
+    console.log("strifsafas");
+    var newState = todoFunctions.sortTodos(state);
+    update(newState);
+  });
+  container.appendChild(sortButton);
 
   // bind create todo form
   if (addTodoForm) {
