@@ -44,6 +44,7 @@
     });
     if(todo.done == true){
       markUnmarkButtonNode.className = "markButton";
+      todoNode.className = "line-through";
     }
     else {
       markUnmarkButtonNode.className = "unMarkButton";
@@ -101,7 +102,7 @@
   // you do not need to change this function
   var renderState = function(state) {
     var todoListNode = document.createElement("ul");
-
+    todoListNode.className="form";
     state.forEach(function(todo) {
       todoListNode.appendChild(createTodoNode(todo));
     });

@@ -49,7 +49,6 @@ var todoFunctions = {
       if (val.id == idToMark) {
         if (val.done == true) {
           val.done = false;
-
         } else {
           val.done = true;
         }
@@ -59,6 +58,8 @@ var todoFunctions = {
     return todos;
   },
   sortTodos: function(todos, sortFunction) {
+
+    
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
