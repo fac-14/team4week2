@@ -1,6 +1,27 @@
+body{
+  background-image: url('images/bckg-img-Y.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #EFD671;
+}
+/* COPY-PASTE FONT-FAMILY & FONT-SIZE INTO CONTAINER
+#todo-container{
+  display: flex;
+  margin-top: 15rem;
+  justify-content: center;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 2.5rem;
+}
+*/
+
+ul{
+  list-style-type: none;
+}
+
 
 .delButton{
   border : 3px solid green;
+  
   height : 50px;
   width : 50px;
   background-image : url(./images/delete.png);
