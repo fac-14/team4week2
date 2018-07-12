@@ -1,0 +1,17 @@
+
+.delButton{
+  border : 3px solid green;
+  height : 50px;
+  width : 50px;
+  background-image : url(./images/delete.png);
+  background-repeat : no-repeat;
+  background-position : center;
+  border-radius: 50%;
+}
+
+.addButton{
+  border: 2px solid red;
+  height : 50px;
+  width : 50px;
+  border-radius : 50%;
+}
