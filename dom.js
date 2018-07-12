@@ -63,7 +63,7 @@
   var sortButton = document.createElement("button");
   sortButton.innerHTML = "sort by done";
   sortButton.addEventListener("click", function(event) {
-    console.log("strifsafas");
+    event.preventDefault();
     var newState = todoFunctions.sortTodos(state);
     update(newState);
   });
@@ -111,7 +111,7 @@
   // you do not need to change this function
   var renderState = function(state) {
     var todoListNode = document.createElement("ul");
-
+    todoListNode.className="form";
     state.forEach(function(todo) {
       todoListNode.appendChild(createTodoNode(todo));
     });
