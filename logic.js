@@ -61,13 +61,41 @@ var todoFunctions = {
   // sortTodos sorts the elements according to their done status (true or false)
   sortTodos: function(todos) {
     var newArr = this.cloneArrayOfObjects(todos);
-    newArr.sort(function(firstTask, secondTask) {
-      if (firstTask.done === true) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
+    if (count % 2 === 0) {
+      newArr.sort(function(firstTask, secondTask) {
+        var i = 0;
+        while (
+          firstTask.description.charCodeAt(i) ===
+          secondTask.description.charCodeAt(i)
+        ) {
+          i += 1;
+        }
+        return (
+          firstTask.description.charCodeAt(i) -
+          secondTask.description.charCodeAt(i)
+        );
+      });
+      newArr.sort(function(firstTask, secondTask) {
+        if (firstTask.done === true) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      newArr.sort(function(firstTask, secondTask) {
+        return firstTask.id - secondTask.id;
+      });
+      newArr.sort(function(firstTask, secondTask) {
+        if (firstTask.done === true) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+    count += 1;
+    console.log(count);
     todos = newArr;
     return todos;
   }
