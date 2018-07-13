@@ -1,7 +1,11 @@
+header{
+margin-bottom: 10%;
+  }
+
 body{
   background-image: url('images/bckg-img-Y.jpg');
   background-repeat: no-repeat;
-  background-size: 90vh;
+  background-size: cover;
   background-color: #EFD671;
 }
 /* COPY-PASTE FONT-FAMILY & FONT-SIZE INTO CONTAINER
@@ -18,17 +22,11 @@ ul{
   list-style-type: none;
 }
 
-
-  body{
-background-image: url('images/bckg-img-Y.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-background-color: #EFD671;
-}
-
 h1 {
-  font-size: 40px;
-
+  font-family: 'Jua', sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  color: #7070CC;
 }
 
 .delButton{
@@ -47,14 +45,13 @@ h1 {
 
 
 .form{
-    min-width: 80%;
-    max-width: 95%; 
-    opacity: 0.5;
-    background-color: #3664BD;
-    margin: 1rem;
+    min-width: 40%;
+    max-width: 45%; 
+    opacity: 0.9;
+    background-color:#7070CC;
     border-radius: 0.5rem;
     position: relative;
-    margin: 0 auto;
+    margin: 0.25rem auto;
 }
 
 ul {
@@ -68,40 +65,48 @@ ul {
     padding: 1.5rem 1.5rem 1.5rem 2rem;
     box-sizing: border-box;
     resize: vertical;
-    font-family: Arial, sans-serif;
-    font-size: 1.25rem;
+    font-family: 'Varela+Round', sans-serif;
+    font-size: 1.7rem;
     border: none;
   }
 
-  #message-box{
-    height: 200px;
+  input[type=text]{
+    height: 7rem;
+    width: 75%; 
+    border: 0.25rem solid;
+    border-color: #7070CC;
+    border-radius: 0.5rem;
   }
 
 
   label{
-      padding: 0.25 rem 0.25rem 0.25rem 0.25;
+    height: 5rem;
+    width: 100%; 
+      padding: 0.25rem;
       color: white;
       display: inline-block;
       font-family: 'Trebuchet', sans-serif;
     font-size: 1.2rem;
-    margin: 0.3rem;
+    border: 0.25rem solid;
+    border-color: #7070CC;
     border-radius: 0.5rem;
+    margin: 0.25rem;
   }
 
-  form li button{
-    background-color: rgb(224, 130, 6);
+  #submit-button{
+    background-color: #FFD12A;
     margin-top: 0.5rem;
-	margin-left: auto;
-	padding: 0.5rem;;
-    color: #000000;
-    font-family: Arial, sans-serif;
-    font-size: 1.25rem;
+	  margin-left: auto;
+	  padding: 0.5rem;;
+    color: #3F26BF;
+    font-family: 'Pangolin', sans-serif;
+    font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 0.15rem;
     border-radius: 0.25rem;
-}
+} 
 
-form li button:active {
+form button:active {
     background-color: #66b348;
     -webkit-box-shadow: -0.1rem 0.1rem 0.1rem grey;
     -moz-box-shadow: -0.1rem 0.1rem 0.1rem grey;
@@ -133,10 +138,20 @@ form li button:active {
   text-decoration: line-through;
 }
 
+footer{
+  text-align: center;
+  font-family: 'Pangolin', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+
+
 /*MEDIA QUERIES*/
 
 /*FOR SCREENS OVER 600px*/
-
+/* 
 @media screen and (min-width:600px) {
   
 header{
@@ -150,4 +165,8 @@ margin-bottom: 8%;
   margin:1% auto;
   }
   
-}
+  input[type=text]{
+    height: 5rem;
+    width: 100%; 
+  }
+} */
