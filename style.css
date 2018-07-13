@@ -1,108 +1,116 @@
-
-  body{
-background-image: url('images/bckg-img-Y.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-background-color: #EFD671;
+body {
+  background-image: url("images/bckg-img-Y.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #efd671;
 }
 
 h1 {
   font-size: 40px;
-
 }
 
-.delButton{
-  border : 3px solid black;
-  height : 50px;
-  width : 50px;
-  background-image : url(./images/delete.png);
-  background-repeat : no-repeat;
-  background-position : center;
+body {
+  background-image: url("images/bckg-img-Y.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #efd671;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.delButton {
+  border: 3px solid black;
+  height: 50px;
+  width: 50px;
+  background-image: url(./images/delete.png);
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 50%;
   position: relative;
   text-align: center;
   grid-column-start: 2;
 }
 
-.form{
-    min-width: 80%;
-    max-width: 98%;  /*Responding to issue 19: is the problem the percentage or the actual figure initially chosen, i.e. 50%?*/
-    padding: 1.2rem;
-    opacity: 0.5;
-    background-color: #3664BD;
-    margin: 1rem;
-    border-radius: 0.5rem;
-    position: relative;
-    margin: 0 auto;
+.form {
+  min-width: 80%;
+  max-width: 98%; /*Responding to issue 19: is the problem the percentage or the actual figure initially chosen, i.e. 50%?*/
+  padding: 1.2rem;
+  opacity: 0.5;
+  background-color: #3664bd;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+  margin: 0 auto;
 }
 
 ul {
-	list-style-type: none;
+  list-style-type: none;
 }
 
-    li {
-      display: grid;
-      grid-template-columns: 70% 15% 15%;
-    width: 100%;
-    padding: 1.5rem 1.5rem 1.5rem 2rem;
-    box-sizing: border-box;
-    resize: vertical;
-    font-family: Arial, sans-serif;
-    font-size: 1.25rem;
-    border: none;
-  }
+li {
+  display: grid;
+  grid-template-columns: 70% 15% 15%;
+  width: 100%;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  border: none;
+}
 
-  #message-box{
-    height: 200px;
-  }
+#message-box {
+  height: 200px;
+}
 
+label {
+  padding: 0.25 rem 0.25rem 0.25rem 0.25;
+  color: white;
+  display: inline-block;
+  font-family: "Trebuchet", sans-serif;
+  font-size: 1.2rem;
+  margin: 0.3rem;
+  border-radius: 0.5rem;
+}
 
-  label{
-      padding: 0.25 rem 0.25rem 0.25rem 0.25;
-      color: white;
-      display: inline-block;
-      font-family: 'Trebuchet', sans-serif;
-    font-size: 1.2rem;
-    margin: 0.3rem;
-    border-radius: 0.5rem;
-  }
-
-  form li button{
-    background-color: rgb(224, 130, 6);
-    margin-top: 0.5rem;
-	margin-left: auto;
-	padding: 0.5rem;;
-    color: #000000;
-    font-family: Arial, sans-serif;
-    font-size: 1.25rem;
-    font-weight: bold;
-    letter-spacing: 0.15rem;
-    border-radius: 0.25rem;
+form li button {
+  background-color: rgb(224, 130, 6);
+  margin-top: 0.5rem;
+  margin-left: auto;
+  padding: 0.5rem;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  border-radius: 0.25rem;
 }
 
 form li button:active {
-    background-color: #66b348;
-    -webkit-box-shadow: -0.1rem 0.1rem 0.1rem grey;
-    -moz-box-shadow: -0.1rem 0.1rem 0.1rem grey;
-    box-shadow: -0.1rem 0.1rem 0.1rem grey;
-    -webkit-transform: translateY(2px);
-    -moz-transform: translateY(2px);
-    transform: translateY(2px);
+  background-color: #66b348;
+  -webkit-box-shadow: -0.1rem 0.1rem 0.1rem grey;
+  -moz-box-shadow: -0.1rem 0.1rem 0.1rem grey;
+  box-shadow: -0.1rem 0.1rem 0.1rem grey;
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  transform: translateY(2px);
 }
-.markButton{
-  border : 3px solid green;
-  height : 50px;
-  width : 50px;
-  border-radius : 50%;
+.markButton {
+  border: 3px solid green;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
   background-image: url("./images/green-tick.png");
   background-size: cover;
   grid-column-start: 3;
 }
-.unMarkButton{
-  border : 3px solid red;
-  height : 50px;
-  width : 50px;
-  border-radius : 50%;
+.unMarkButton {
+  border: 3px solid red;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
   background-image: url("./images/red-cross.png");
   background-size: cover;
   grid-column-start: 3;
@@ -111,8 +119,8 @@ form li button:active {
 .line-through {
   text-decoration: line-through;
 }
-.sortButton{
-  border : 3px solid green;
-  height : 50px;
-  width : 50px;
+.sortButton {
+  border: 3px solid green;
+  height: 50px;
+  width: 50px;
 }

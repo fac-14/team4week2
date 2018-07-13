@@ -1,6 +1,11 @@
 var test = require("tape");
 var logic = require("./logic");
 
+test("Testing Tape is working", function(t) {
+  t.equal(1, 1, "One should equal one");
+  t.end();
+});
+
 // testing for 1. function called addTodo
 
 // tests A: is pushing an toDo task into the toDos-array working?
@@ -41,6 +46,8 @@ test("markTodo toggle", function(t) {
   t.end();
 });
 
+// testing for delete function --> using filter to check two ids and removes it from the array of objects
+
 test("test for delete", function(t) {
   var todos = [
     { id: 0, description: "make tea", done: false },
@@ -52,19 +59,20 @@ test("test for delete", function(t) {
   t.end();
 });
 
-//////
+// testing for sort function --> if task done --> move it down, if task undone move it up
+
 test("test for sort", function(t) {
-var todos = [
-{ id: 0, description: "make tea", done: false },
-{ id: 1, description: "make eggs", done: true },
-{ id: 1, description: "make breakfast", done: false }
-];
-var actual = logic.sortTodos(todos);
-var expected = [
-{ id: 0, description: "make tea", done: false },
-{ id: 1, description: "make breakfast", done: false },
-{ id: 1, description: "make eggs", done: true }
-];
-t.deepEquals(actual, expected, "to do: false items should be switched to");
-t.end();
+  var todos = [
+    { id: 0, description: "make tea", done: false },
+    { id: 1, description: "make eggs", done: true },
+    { id: 1, description: "make breakfast", done: false }
+  ];
+  var actual = logic.sortTodos(todos);
+  var expected = [
+    { id: 0, description: "make tea", done: false },
+    { id: 1, description: "make breakfast", done: false },
+    { id: 1, description: "make eggs", done: true }
+  ];
+  t.deepEquals(actual, expected, "to do: false items should be switched to");
+  t.end();
 });
