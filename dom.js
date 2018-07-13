@@ -7,21 +7,13 @@
   var container = document.getElementById("todo-container");
   var addTodoForm = document.getElementById("add-todo");
 
-  var state = [
-    { id: -3, description: "first todo", done: false },
-    { id: -2, description: "second todo", done: true },
-    { id: -1, description: "third todo", done: false }
-  ]; // this is our initial todoList
+  var state = []; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
 
   var createTodoNode = function(todo) {
     var todoNode = document.createElement("li");
 
-    // addButtonNode.addEventListner('click', function(event){
-    //   window.location = addTodoForm;
-    // });
-    // add span holding description
     todoNode.appendChild(document.createTextNode(todo.description));
 
     // this adds the delete button
@@ -31,65 +23,57 @@
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
+    deleteButtonNode.className = "delButton";
 
     // add markTodo button
     var markUnmarkButtonNode = document.createElement("button");
-
-
-
     markUnmarkButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
-
       update(newState);
     });
-    if(todo.done == true){
+
+    // set up toggle for mark or unmark button
+    if (todo.done == true) {
       markUnmarkButtonNode.className = "markButton";
       todoNode.className = "line-through";
-    }
-    else {
+    } else {
       markUnmarkButtonNode.className = "unMarkButton";
     }
 
     todoNode.appendChild(markUnmarkButtonNode);
 
-    // add classes for css
-    deleteButtonNode.className = "delButton";
-
-//markUnmarkButtonNode.className = "unMarkButton";
-
     return todoNode;
   };
+  var sortButton = document.createElement("button");
+  sortButton.innerHTML = "sort by done";
+  sortButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    var newState = todoFunctions.sortTodos(state);
+    update(newState);
+  });
+  container.appendChild(sortButton);
 
   // bind create todo form
+  // set up addTodo function to add new tasks (objects) to the state array by clicking submit
   if (addTodoForm) {
     addTodoForm.addEventListener("submit", function(event) {
+      // prevent submit button to refresh page on each click
       event.preventDefault();
-      console.log(event);
-
-      // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-      // what does event.preventDefault do?
-      // what is inside event.target?
+      // set up description variable to access the users input string into the text box
       var description = event.target.description.value;
 
-      console.log(description);
-
-      // use unique id
-      // use addTodo
-      // state = todos
-      // description = newTodo
+      // create a new object when user types in text and clicks submit
+      // object id uses generateId function, var description and a pre-defined done status (false)
 
       var newObject = {
         id: todoFunctions.generateId(),
         description: description,
         done: false
       };
-
-      console.log(state);
-
+      // create newState variable using our addTodo function which pushes new objects into our state arrays
       var newState = todoFunctions.addTodo(state, newObject);
+      // newState array uses the update version which in turn uses the render function
       update(newState);
-
-      // hint: todoFunctions.addTodo
     });
   }
 
@@ -102,15 +86,13 @@
   // you do not need to change this function
   var renderState = function(state) {
     var todoListNode = document.createElement("ul");
-    todoListNode.className="form";
+    todoListNode.className = "form";
     state.forEach(function(todo) {
       todoListNode.appendChild(createTodoNode(todo));
     });
 
-    // you may want to add a class for css
     container.replaceChild(todoListNode, container.firstChild);
   };
 
   if (container) renderState(state);
 })();
-//console.log('here');
