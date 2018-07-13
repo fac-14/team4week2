@@ -9,6 +9,17 @@ h1 {
   font-size: 40px;
 }
 
+body {
+  background-image: url("images/bckg-img-Y.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #efd671;
+}
+
+h1 {
+  font-size: 40px;
+}
+
 .delButton {
   border: 3px solid black;
   height: 50px;
