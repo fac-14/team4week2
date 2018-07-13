@@ -1,6 +1,7 @@
 // Part 1. Fill in any missing parts of the todoFunction object!
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
+var count=0;
 
 var todoFunctions = {
   // todoFunctions.generateId() will give you a unique id
@@ -39,7 +40,7 @@ var todoFunctions = {
     todos = newArr;
     return todos;
   },
-  
+
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
@@ -63,9 +64,19 @@ var todoFunctions = {
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
+
     sortTodos: function(todos) {
       var newArr = this.cloneArrayOfObjects(todos);
+      if(count%2===0){
 
+        newArr.sort(function(firstTask, secondTask)
+      {
+        var i=0;
+        while(firstTask.description.charCodeAt(i)===secondTask.description.charCodeAt(i)){
+          i+=1;
+        }
+        return firstTask.description.charCodeAt(i)-secondTask.description.charCodeAt(i);
+      });
       newArr.sort(function(firstTask, secondTask) {
 
         if (firstTask.done === true) {
@@ -74,6 +85,25 @@ var todoFunctions = {
           return -1;
         }
       });
+
+    }
+    else{
+      newArr.sort(function(firstTask,secondTask) {
+        return firstTask.id - secondTask.id
+
+      });
+      newArr.sort(function(firstTask, secondTask) {
+
+        if (firstTask.done === true) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+
+    }
+      count +=1;
+      console.log(count);
       todos = newArr;
       return todos;
       }
