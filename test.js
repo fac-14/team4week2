@@ -58,7 +58,6 @@ test("test for delete", function(t) {
   t.deepEquals(actual, expected, "to do: make tea should be deleted");
   t.end();
 });
-<<<<<<< HEAD
 
 // testing for sort function --> if task done --> move it down, if task undone move it up
 
@@ -77,23 +76,3 @@ test("test for sort", function(t) {
   t.deepEquals(actual, expected, "to do: false items should be switched to");
   t.end();
 });
-||||||| merged common ancestors
-=======
-
-//////
-test("test for sort", function(t) {
-var todos = [
-{ id: 0, description: "make tea", done: false },
-{ id: 1, description: "make eggs", done: true },
-{ id: 1, description: "make breakfast", done: false }
-];
-var actual = logic.sortTodos(todos);
-var expected = [
-{ id: 0, description: "make tea", done: false },
-{ id: 1, description: "make breakfast", done: false },
-{ id: 1, description: "make eggs", done: true }
-];
-t.deepEquals(actual, expected, "to do: false items should be switched to");
-t.end();
-});
->>>>>>> master

@@ -35,6 +35,7 @@
     // set up toggle for mark or unmark button
     if (todo.done == true) {
       markUnmarkButtonNode.className = "markButton";
+      todoNode.className = "line-through";
     } else {
       markUnmarkButtonNode.className = "unMarkButton";
     }
