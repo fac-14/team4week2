@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <html lang="en-UK"></html>
+        <title>To-do list</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Jua|Pangolin|Varela+Round" rel="stylesheet">  
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>tdd todo</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
+<header><br><br><h1>My to-do list</h1></header>
 
 <body>
-
-  <h1>Form test</h1>
+  
   <form id="todo-container">
 
 
 
   </form>
-
-  <form id="add-todo">
-    <input type="text" name="description" value="">
-    <input type="submit" name="button" value="Submit">
+  <form class='form'>
+      <label for="add-text"></label>
+    <input type="text"  name="description" id='add-text' value="">
+    <input type="submit" id='submit-button' name="button" value="Submit">
   </form>
 </body>
+<footer>FAC14 - Simon, Sangita, Artemis, Harry</footer>
 <script type="text/javascript" src="./logic.js"></script>
 <script type="text/javascript" src="./dom.js"></script>
 
